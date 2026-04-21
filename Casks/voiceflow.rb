@@ -1,12 +1,12 @@
 cask "voiceflow" do
-  version "0.1.0-beta.1"
-  sha256 "9cdef12b111a9f34e693f0a5c22ee4f26214922130513913f49309146d0d1404"
+  version "0.2.0-beta.1"
+  sha256 "2cbac5f4fc05a7fe119598aab066d3580874e75e7514f3da0666fb53a1163518"
 
-  url "https://github.com/raunaksingh/voiceflow/releases/download/v#{version}/VoiceFlow-Beta.dmg",
-      verified: "github.com/raunaksingh/voiceflow/"
+  url "https://github.com/Raunaks068619/VoiceFlow/releases/download/v#{version}/VoiceFlow-Beta.dmg",
+      verified: "github.com/Raunaks068619/VoiceFlow/"
   name "VoiceFlow"
   desc "Bilingual (Hindi/English) dictation app with real-time translation"
-  homepage "https://github.com/raunaksingh/voiceflow"
+  homepage "https://github.com/Raunaks068619/VoiceFlow"
 
   livecheck do
     url :url

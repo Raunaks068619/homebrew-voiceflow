@@ -7,7 +7,7 @@ Native macOS dictation is English-only. Wispr Flow is English-only. VoiceFlow is
 ## Install
 
 ```bash
-brew install --cask raunaksingh/voiceflow/voiceflow
+brew install --cask Raunaks068619/voiceflow/voiceflow
 ```
 
 That's the whole install. VoiceFlow.app lands in `/Applications`, menu-bar icon appears on first launch.
