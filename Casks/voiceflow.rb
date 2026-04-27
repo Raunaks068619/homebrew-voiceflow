@@ -1,6 +1,6 @@
 cask "voiceflow" do
-  version "0.3.1"
-  sha256 "8e958aab002b406af5031f525c86e243844035763e2fec4687826ea6f2712753"
+  version "0.3.3"
+  sha256 "315be1f12a33d4e07cecec73449350658d51af2f3c3ee929bca53455a28576bc"
 
   url "https://github.com/Raunaks068619/VoiceFlow/releases/download/v#{version}/VoiceFlow-Beta.dmg",
       verified: "github.com/Raunaks068619/VoiceFlow/"
@@ -25,6 +25,21 @@ cask "voiceflow" do
                    args: ["-cr", "#{appdir}/VoiceFlow.app"],
                    sudo: false
   end
+
+  caveats <<~EOS
+    VoiceFlow needs three macOS permissions on first launch:
+
+      1. Microphone        — click Allow when prompted
+      2. Accessibility     — System Settings > Privacy & Security > Accessibility > toggle VoiceFlow ON
+      3. Input Monitoring  — System Settings > Privacy & Security > Input Monitoring > toggle VoiceFlow ON
+
+    If you previously denied any of these (e.g. upgrading from an earlier version),
+    reset and relaunch:
+      tccutil reset All com.voiceflow.app
+      open /Applications/VoiceFlow.app
+
+    The app lives in your menu bar (top-right) once permissions are granted.
+  EOS
 
   uninstall quit: "com.voiceflow.app"
 
