@@ -1,6 +1,6 @@
 cask "vordi" do
-  version "0.6.3"
-  sha256 "76c2e40bc3369f97b67c61919e36e1e36c075cf9afcb8354e83c907c8e82860d"
+  version "0.7.0"
+  sha256 "a084d2ddfdcee5ce2e4347c637375d29d20ff634f090513d7e73245ef813c7b4"
 
   url "https://github.com/Raunaks068619/Vordi/releases/download/v#{version}/Vordi-Beta.dmg",
       verified: "github.com/Raunaks068619/Vordi/"
