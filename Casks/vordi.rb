@@ -1,6 +1,6 @@
 cask "vordi" do
-  version "0.7.0"
-  sha256 "738510044249823469e4b734f13f2e5cd7e996c376ce8be540840b993e54b550"
+  version "0.7.1"
+  sha256 "a7c1a57120ce36643f96287729556957feab52c07a4aff937a5f4405eaa0a3d1"
 
   url "https://github.com/Raunaks068619/Vordi/releases/download/v#{version}/Vordi-Beta.dmg",
       verified: "github.com/Raunaks068619/Vordi/"
@@ -13,7 +13,7 @@ cask "vordi" do
     strategy :github_latest
   end
 
-  depends_on macos: ">= :ventura"
+  depends_on macos: :ventura
   depends_on arch: :arm64
 
   app "Vordi.app"
@@ -25,6 +25,15 @@ cask "vordi" do
                    args: ["-cr", "#{appdir}/Vordi.app"],
                    sudo: false
   end
+
+  uninstall quit: "com.vordi.app"
+
+  zap trash: [
+    "~/Library/Application Support/Vordi",
+    "~/Library/Caches/com.vordi.app",
+    "~/Library/Logs/Vordi",
+    "~/Library/Preferences/com.vordi.app.plist",
+  ]
 
   caveats <<~EOS
     Vordi needs three macOS permissions on first launch:
@@ -40,13 +49,4 @@ cask "vordi" do
 
     The app lives in your menu bar (top-right) once permissions are granted.
   EOS
-
-  uninstall quit: "com.vordi.app"
-
-  zap trash: [
-    "~/Library/Application Support/Vordi",
-    "~/Library/Caches/com.vordi.app",
-    "~/Library/Logs/Vordi",
-    "~/Library/Preferences/com.vordi.app.plist",
-  ]
 end
