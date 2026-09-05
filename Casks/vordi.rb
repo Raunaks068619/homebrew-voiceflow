@@ -1,6 +1,6 @@
 cask "vordi" do
-  version "0.7.1"
-  sha256 "a7c1a57120ce36643f96287729556957feab52c07a4aff937a5f4405eaa0a3d1"
+  version "0.7.2"
+  sha256 "a4aeb882573bd64a8bd607605f7354dd856afbb64e4c7d4816eb25883f48f0fc"
 
   url "https://github.com/Raunaks068619/Vordi/releases/download/v#{version}/Vordi-Beta.dmg",
       verified: "github.com/Raunaks068619/Vordi/"
@@ -17,14 +17,6 @@ cask "vordi" do
   depends_on arch: :arm64
 
   app "Vordi.app"
-
-  # Ad-hoc signed build — strip quarantine so Gatekeeper lets it launch.
-  # Remove this postflight block once we move to Apple Developer ID + notarization.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{appdir}/Vordi.app"],
-                   sudo: false
-  end
 
   uninstall quit: "com.vordi.app"
 
